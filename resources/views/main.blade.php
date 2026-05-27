@@ -50,10 +50,13 @@
 </head>
 
 <body>
-    <header class="hero pattern">
+    <header class="hero">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="{{ asset('assets/videos/main.mp4') }}" type="video/mp4">
+        </video>
         <nav class="container">
             <a class="brand" href="#inicio" aria-label="SIHEM PACK">
-                <div class="brand-icon"><img src="{{ asset('assets/images/logo.png') }}" alt="SIHEM PACK">
+                <div class="brand-icon"><img src="{{ asset('assets/images/logo_iso.png') }}" alt="SIHEM PACK">
                 </div>
                 <div>
                     <img src="{{ asset('assets/images/logo_texto_blanco.png') }}" alt="SIHEM PACK" class="brand-logo">
@@ -84,7 +87,7 @@
 
             <div class="visual-card">
                 <div class="factory-visual">
-                    <div class="factory-inner"><img src="{{ asset('assets/images') }}/sihem_pack_page_2.jpg.jpeg"
+                    <div class="factory-inner"><img src="{{ asset('assets/images') }}/image_hero.jpg"
                             alt="Operación y empaques de cartón corrugado"></div>
                 </div>
                 <div class="problem-card">
@@ -141,11 +144,11 @@
             </div>
 
             <div class="image-band">
-                <div class="image-tile"><img src="{{ asset('assets/images') }}/sihem_pack_page_3.jpg.jpeg"
-                        alt="Misión, visión y material corrugado">
+                <div class="image-tile"><img src="{{ asset('assets/images/panel 1.png') }}"
+                        alt="Innovación, eficiencia y calidad">
                     <div class="caption">Innovación, eficiencia, calidad y tiempos de entrega óptimos.</div>
                 </div>
-                <div class="image-tile"><img src="{{ asset('assets/images') }}/sihem_pack_page_4.jpg.jpeg"
+                <div class="image-tile"><img src="{{ asset('assets/images/panel 2.jpg') }}"
                         alt="Cartón corrugado sencillo, doble, triple y microcorrugado">
                     <div class="caption">Cartón corrugado sencillo, doble, triple y microcorrugado con recubrimientos
                         especiales.</div>
@@ -161,12 +164,17 @@
                     <div class="section-kicker">Soluciones que ofrecemos</div>
                     <h2>Portafolio diseñado para operaciones reales.</h2>
                 </div>
-                <a class="btn btn-dark" href="#contacto">Descargar catálogo</a>
+                <a class="btn btn-download" href="{{ asset('assets/files/Brochure sihempack.pdf') }}" download="Brochure SIHEM PACK.pdf">
+                    <span class="dl-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </span>
+                    Descargar catálogo
+                </a>
             </div>
 
             <div class="products-grid">
                 <article class="product-card">
-                    <div class="product-img"><img src="{{ asset('assets/images') }}/sihem_pack_page_6.jpg.jpeg"
+                    <div class="product-img"><img src="{{ asset('assets/images/productos') }}/caja.jpg"
                             alt="Cajas corrugadas">
                     </div>
                     <div class="product-body">
@@ -175,7 +183,7 @@
                     </div>
                 </article>
                 <article class="product-card">
-                    <div class="product-img"><img src="{{ asset('assets/images') }}/sihem_pack_page_6.jpg.jpeg"
+                    <div class="product-img"><img src="{{ asset('assets/images/productos') }}/rejilla.jpg"
                             alt="Rejillas y separadores"></div>
                     <div class="product-body">
                         <h3 class="product-title">Rejillas y separadores <span class="arrow">›</span></h3>
@@ -183,7 +191,7 @@
                     </div>
                 </article>
                 <article class="product-card">
-                    <div class="product-img"><img src="{{ asset('assets/images') }}/sihem_pack_page_6.jpg.jpeg"
+                    <div class="product-img"><img src="{{ asset('assets/images/productos') }}/bandeja.jpg"
                             alt="Bandejas"></div>
                     <div class="product-body">
                         <h3 class="product-title">Bandejas <span class="arrow">›</span></h3>
@@ -191,7 +199,7 @@
                     </div>
                 </article>
                 <article class="product-card">
-                    <div class="product-img"><img src="{{ asset('assets/images') }}/sihem_pack_page_5.jpg.jpeg"
+                    <div class="product-img"><img src="{{ asset('assets/images/productos') }}/paneles.jpg"
                             alt="Paneles genéricos">
                     </div>
                     <div class="product-body">
@@ -200,7 +208,7 @@
                     </div>
                 </article>
                 <article class="product-card">
-                    <div class="product-img"><img src="{{ asset('assets/images') }}/sihem_pack_page_6.jpg.jpeg"
+                    <div class="product-img"><img src="{{ asset('assets/images/productos') }}/octavines.png"
                             alt="Octavines"></div>
                     <div class="product-body">
                         <h3 class="product-title">Octavines <span class="arrow">›</span></h3>
@@ -208,7 +216,7 @@
                     </div>
                 </article>
                 <article class="product-card">
-                    <div class="product-img"><img src="{{ asset('assets/images') }}/sihem_pack_page_4.jpg.jpeg"
+                    <div class="product-img"><img src="{{ asset('assets/images/productos') }}/especialidades.jpg"
                             alt="Especialidades">
                     </div>
                     <div class="product-body">
@@ -278,25 +286,35 @@
         <div class="container">
             <div class="section-kicker">Galería visual</div>
             <h2>Productos, aplicaciones y contacto comercial.</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="{{ asset('assets/images') }}/sihem_pack_page_2.jpg.jpeg" alt="Operación">
-                </div>
-                <div class="gallery-item"><img src="{{ asset('assets/images') }}/sihem_pack_page_4.jpg.jpeg"
-                        alt="Cartón corrugado">
-                </div>
-                <div class="gallery-item"><img src="{{ asset('assets/images') }}/sihem_pack_page_5.jpg.jpeg"
-                        alt="Paneles genéricos">
-                </div>
-                <div class="gallery-item"><img src="{{ asset('assets/images') }}/sihem_pack_page_6.jpg.jpeg"
-                        alt="Soluciones de empaque"></div>
+        </div>
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/caja.jpg') }}" alt="Cajas corrugadas"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/rejilla.jpg') }}" alt="Rejillas"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/bandeja.jpg') }}" alt="Bandejas"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/paneles.jpg') }}" alt="Paneles"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/octavines.png') }}" alt="Octavines"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/especialidades.jpg') }}" alt="Especialidades"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/rejilla 2.jpg') }}" alt="Rejilla variante"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/bandeja 2.jpg') }}" alt="Bandeja variante"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/especial 2.jpg') }}" alt="Especialidad variante"></div>
+                {{-- duplicado para loop continuo --}}
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/caja.jpg') }}" alt="Cajas corrugadas"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/rejilla.jpg') }}" alt="Rejillas"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/bandeja.jpg') }}" alt="Bandejas"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/paneles.jpg') }}" alt="Paneles"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/octavines.png') }}" alt="Octavines"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/especialidades.jpg') }}" alt="Especialidades"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/rejilla 2.jpg') }}" alt="Rejilla variante"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/bandeja 2.jpg') }}" alt="Bandeja variante"></div>
+                <div class="carousel-item"><img src="{{ asset('assets/images/productos/especial 2.jpg') }}" alt="Especialidad variante"></div>
             </div>
         </div>
     </section>
 
-    <section class="cta pattern" id="contacto">
+    <section class="cta" id="contacto">
         <div class="container cta-grid">
             <div>
-                <div class="section-kicker" style="color: rgba(255,255,255,.78);">Cotización inteligente</div>
                 <h2>Hablemos de su proyecto de empaque.</h2>
                 <p class="lead">Un asesor puede recibir por WhatsApp sus medidas, fotos, volumen aproximado, uso del
                     empaque y destino logístico para orientar la solución correcta.</p>
@@ -307,6 +325,7 @@
                 <textarea placeholder="¿Qué necesita empacar?"></textarea>
                 <button type="button" class="btn btn-dark" style="width:100%; padding: 17px 24px;">Enviar
                     solicitud</button>
+                <p class="form-error-msg" id="form-error">Por favor completa todos los campos.</p>
             </form>
         </div>
     </section>

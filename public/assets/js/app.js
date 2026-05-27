@@ -3,19 +3,44 @@ document.addEventListener('DOMContentLoaded', function () {
     if (form) {
         const btn = form.querySelector('button[type="button"]');
         btn.addEventListener('click', function () {
-            const name = form.querySelector('input[placeholder="Nombre y empresa"]').value.trim();
-            const contact = form.querySelector('input[placeholder="Correo / WhatsApp"]').value.trim();
-            const message = form.querySelector('textarea').value.trim();
+            const nameEl    = form.querySelector('input[placeholder="Nombre y empresa"]');
+            const contactEl = form.querySelector('input[placeholder="Correo / WhatsApp"]');
+            const messageEl = form.querySelector('textarea');
+            const errorEl   = document.getElementById('form-error');
 
-            if (!name || !contact || !message) {
-                alert('Por favor completa todos los campos.');
+            const fields = [nameEl, contactEl, messageEl];
+            let valid = true;
+
+            fields.forEach(el => {
+                if (!el.value.trim()) {
+                    el.classList.add('field-error');
+                    valid = false;
+                } else {
+                    el.classList.remove('field-error');
+                }
+            });
+
+            if (!valid) {
+                errorEl.classList.add('visible');
                 return;
             }
 
+            errorEl.classList.remove('visible');
+
             const text = encodeURIComponent(
-                `Hola SIHEM PACK, soy ${name}.\nContacto: ${contact}\n\n${message}`
+                `Hola SIHEM PACK, soy ${nameEl.value.trim()}.\nContacto: ${contactEl.value.trim()}\n\n${messageEl.value.trim()}`
             );
             window.open(`https://wa.me/5255610302964?text=${text}`, '_blank');
+        });
+
+        // Limpiar error al escribir
+        form.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('input', function () {
+                this.classList.remove('field-error');
+                if (form.querySelectorAll('.field-error').length === 0) {
+                    document.getElementById('form-error').classList.remove('visible');
+                }
+            });
         });
     }
 
