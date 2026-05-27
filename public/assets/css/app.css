@@ -145,15 +145,10 @@ nav {
     object-fit: contain;
 }
 
-.brand-title {
-    font-size: 23px;
-    font-weight: 950;
-    letter-spacing: -.02em;
-    line-height: 1;
-}
-
-.brand-title span {
-    color: var(--green);
+.brand-logo {
+    height: 32px;
+    width: auto;
+    display: block;
 }
 
 .brand-sub {
@@ -667,13 +662,10 @@ footer {
     align-items: start;
 }
 
-.footer-title {
-    font-size: 26px;
-    font-weight: 950;
-}
-
-.footer-title span {
-    color: var(--green);
+.footer-logo {
+    height: 36px;
+    width: auto;
+    display: block;
 }
 
 .footer-text {

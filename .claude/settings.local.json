@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(php artisan *)"
+      "Bash(php artisan *)",
+      "PowerShell(Get-Command php -ErrorAction SilentlyContinue)",
+      "PowerShell(& \"C:\\\\laragon\\\\bin\\\\php\\\\php8.4.7\\\\php.exe\" --version 2>&1)",
+      "Read(//c/laragon/bin/php/**)",
+      "Read(//c/laragon/**)"
     ]
   }
 }
